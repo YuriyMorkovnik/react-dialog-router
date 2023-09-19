@@ -16,7 +16,7 @@ To use the React Dialog Router, you first need to initialize it with a set of di
 
 ```js
 //dialogRoot.js
-import initDialogRouter from 'react-dialog-router';
+import { initDialogRouter } from 'react-dialog-router';
 import { DialogComponent, DialogComponent2 } from './dialogs';
 // Define your dialog components
 const dialogs = {

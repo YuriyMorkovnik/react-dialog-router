@@ -1,4 +1,4 @@
 
-import DialogRouter from './components/DialogRouter'
+import initDialogRouter from './components/DialogRouter'
 
-export { DialogRouter }
+export { initDialogRouter }
