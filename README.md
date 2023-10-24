@@ -3,7 +3,7 @@
 The React Dialog Router is a versatile component that simplifies the management of dialogs within your React application. It provides a context-based approach to open, close, and navigate between dialogs. This README specifies its abilities and the functions available from the `useDialogs` hook.
 
 ## Playground
-Here is a [codesandbox]: https://codesandbox.io/s/react-dialog-router-example-746c29
+Here is a [codesandbox](https://codesandbox.io/s/react-dialog-router-example-746c29)
 
 ## Installation
 
