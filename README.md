@@ -2,6 +2,9 @@
 
 The React Dialog Router is a versatile component that simplifies the management of dialogs within your React application. It provides a context-based approach to open, close, and navigate between dialogs. This README specifies its abilities and the functions available from the `useDialogs` hook.
 
+## Playground
+Here is a [codesandbox]: https://codesandbox.io/s/react-dialog-router-example-746c29
+
 ## Installation
 
 You can install the React Dialog Router component using npm or yarn:
@@ -12,35 +15,20 @@ npm install react-dialog-router
 yarn add react-dialog-router
 ```
 ## Usage
-To use the React Dialog Router, you first need to initialize it with a set of dialogs. Here's an example of how to set it up:
+To use the React Dialog Router, you first need to import DialogRouterProvider and add it to your root app. Here's an example of how to set it up:
 
 ```js
-//dialogRoot.js
-import { initDialogRouter } from 'react-dialog-router';
+//App.js
+import { DialogRouterProvider } from 'react-dialog-router';
 import { DialogComponent, DialogComponent2 } from './dialogs';
-// Define your dialog components
+
 const dialogs = {
   'DIALOG_NAME': DialogComponent,
   'DIALOG_NAME_2': DialogComponent2
 };
-
-const { DialogRouter, useDialogs: useDialogsHook, withDialogs: withDialogsHOC } = initDialogRouter(dialogs);
-
-export const useDialogs = useDialogsHook
-
-export const withDialogs = withDialogsHOC
-
-export default DialogRouter
-
-```
-
-```js
-//App.js
-import DialogRouter from './dialogRoot';
-
 function App() {
   return (
-    <DialogRouter>
+    <DialogRouter dialogs={dialogs}>
       {/* Your application content */}
     </DialogRouter>
   );
@@ -85,7 +73,7 @@ Closes the secondary dialog.
 You can wrap your components with the withDialogs HOC to inject the dialogContext prop, which allows you to access the dialog-related functions within your component.
 
 ```js
-import { withDialogs } from './dialogRoot';
+import { withDialogs } from 'react-dialog-router';
 
 const MyComponent = ({ dialogContext }) => {
   // Access dialog functions using dialogContext
@@ -100,7 +88,7 @@ const MyComponent = ({ dialogContext }) => {
 Here's an example of how to use the React Dialog Router to open a dialog:
 ```js
 import React from 'react';
-import { useDialogs } from './dialogRoot'; // Replace with the actual path
+import { useDialogs } from 'react-dialog-router'; // Replace with the actual path
 
 function MyButton() {
   const { openDialog } = useDialogs();
