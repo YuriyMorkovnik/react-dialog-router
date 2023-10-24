@@ -1,4 +1,4 @@
 
-import initDialogRouter from './components/DialogRouter'
+import { useDialogs, withDialogs, DialogRouterProvider } from './components/DialogRouter'
 
-export { initDialogRouter }
+export { useDialogs, withDialogs, DialogRouterProvider }

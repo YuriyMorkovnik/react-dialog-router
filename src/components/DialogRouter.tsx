@@ -6,11 +6,11 @@ export const switchCase = (cases: object) => (defaultCase: any) => (key: any) =>
 
 const DialogsContext = createContext({})
 
-const useDialogs = () => {
+export const useDialogs = () => {
   return useContext(DialogsContext)
 }
 
-const withDialogs = (Component: any) => {
+export const withDialogs = (Component: any) => {
   // eslint-disable-next-line react/display-name
   return (props: any) => {
     const dialogContext = useContext(DialogsContext)
@@ -29,7 +29,7 @@ interface DialogHistoryItem {
 }
 
 // eslint-disable-next-line react/display-name
-const createDialogRouter = (dialogs: object) => ({ children }: any) => {
+export const DialogRouterProvider = ({ children, dialogs }: any) => {
   // Primary dialog
   const [history, setHistory] = useState<DialogHistoryItem[]>([])
   const { name, props = {} } = last(history) || { name: null, props: {} }
@@ -90,13 +90,3 @@ const createDialogRouter = (dialogs: object) => ({ children }: any) => {
     </DialogsContext.Provider>
   )
 }
-
-const initDialogRouter = (dialogs: any) => {
-  return {
-    DialogRouter: createDialogRouter(dialogs),
-    useDialogs,
-    withDialogs
-  }
-}
-
-export default initDialogRouter

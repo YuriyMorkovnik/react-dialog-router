@@ -1,6 +1,6 @@
 {
   "name": "react-dialog-router",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
@@ -9,8 +9,7 @@
     "build": "yarn build:esm && yarn build:cjs",
     "build:esm": "tsc",
     "build:cjs": "tsc --module commonjs --outDir dist/cjs",
-    "prepare": "npm run build",
-    "prepublishOnly": "npm test && npm run prettier && npm run lint"
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -32,5 +31,5 @@
     "dist",
     "LICENSE",
     "README.md"
-  ]  
+  ]
 }
